@@ -4,4 +4,8 @@ case class NonEmptyList[T](firstElement:T, allOtherElements:List[T]) extends Lis
   override def toString = s"$firstElement,$allOtherElements"
   override def addToEnd[S >: T](elementToAdd:S) = new NonEmptyList(firstElement, allOtherElements.addToEnd(elementToAdd))
   def length = 1 + allOtherElements.length
+  def map[S](transformFunction:T=>S):List[S] = new NonEmptyList[S](transformFunction(firstElement), allOtherElements.map(transformFunction))
+  def fold[S](incrementalFold:(T,S)=>S, initialValue:S):S = {
+    incrementalFold(firstElement, allOtherElements.fold(incrementalFold, initialValue))
+  }
 }

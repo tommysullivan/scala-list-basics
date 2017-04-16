@@ -33,7 +33,7 @@ class ListSpec extends FlatSpec with Matchers {
   }
 
   "l1.addToEnd(2)" should "yield 1,2." in {
-    l1.addToEnd(2).toString shouldEqual "1,2,git."
+    l1.addToEnd(2).toString shouldEqual "1,2,."
   }
 
   "l0.addToEnd(1)" should "equal l1" in {
