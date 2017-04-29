@@ -22,11 +22,11 @@ implicit class Rootable(addable:Addable) {
   def squareRoot = sqrt(addable)
 }
 
-implicit class IntSummable(intList:List[Addable]) {
+implicit class Summable(intList:List[Addable]) {
   def sum:Addable = intList.fold[Addable]((a,b) => a + b, Zero)
 }
 
 case class FiniteVector[T <: Multipliable](elements:List[T]) {
-  def size:Int = elements.length
+  def dimension:Int = elements.length
   def magnitude:Double = elements.map(i => i * i).sum.squareRoot
 }

@@ -39,4 +39,8 @@ class ListSpec extends FlatSpec with Matchers {
   "l0.addToEnd(1)" should "equal l1" in {
     l0.addToEnd(1) shouldEqual l1
   }
+
+  "l3.addListToEnd(l2)" should "equal 3,2,1,2,1,." in {
+    l3.addListToEnd(l2).toString shouldEqual "3,2,1,2,1,."
+  }
 }
