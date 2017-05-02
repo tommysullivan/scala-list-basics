@@ -31,4 +31,16 @@ class ListSpec extends FlatSpec with Matchers {
   "l0.addToBeginning(1)" should "equal l1" in {
     l0.addToBeginning(1) shouldEqual l1
   }
+
+  "l1.addToEnd(2)" should "yield 1,2." in {
+    l1.addToEnd(2).toString shouldEqual "1,2,."
+  }
+
+  "l0.addToEnd(1)" should "equal l1" in {
+    l0.addToEnd(1) shouldEqual l1
+  }
+
+  "l3.addListToEnd(l2)" should "equal 3,2,1,2,1,." in {
+    l3.addListToEnd(l2).toString shouldEqual "3,2,1,2,1,."
+  }
 }
