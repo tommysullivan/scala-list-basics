@@ -43,4 +43,20 @@ class ListSpec extends FlatSpec with Matchers {
   "l3.addListToEnd(l2)" should "equal 3,2,1,2,1,." in {
     l3.addListToEnd(l2).toString shouldEqual "3,2,1,2,1,."
   }
+
+  "l3.addListToBeginning(l2)" should "equal 2,1,3,2,1,." in {
+    l3.addListToBeginning(l2).toString shouldEqual "2,1,3,2,1,."
+  }
+
+  "l3.map(x => x * x)" should "equal 9,4,1,." in {
+    l3.map(x => x * x).toString shouldEqual "9,4,1,."
+  }
+
+  "l3.map(5 * _)" should "equal 15,10,5,." in {
+    l3.map(5 * _).toString shouldEqual "15,10,5,."
+  }
+
+  "l5.filter(_ % 2 == 0)" should "equal 4,2,." in {
+    l5.filter(_ % 2 == 0).toString shouldEqual "4,2,."
+  }
 }
