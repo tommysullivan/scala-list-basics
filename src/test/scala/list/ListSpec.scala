@@ -59,4 +59,15 @@ class ListSpec extends FlatSpec with Matchers {
   "l5.filter(_ % 2 == 0)" should "equal 4,2,." in {
     l5.filter(_ % 2 == 0).toString shouldEqual "4,2,."
   }
+
+  "l5.fold(_ + _, 0)" should "equal 15" in {
+    l5.fold((a:Int,b:Int) => a + b, 0) shouldEqual 15
+    l5.fold[Int](_ + _, 0) shouldEqual 15
+  }
+
+  "l5.fold(_ * _, 1)" should "equal 120" in {
+    l5.fold((a:Int,b:Int) => a * b, 1) shouldEqual 120
+    l5.fold[Int](_ * _, 1) shouldEqual 120
+  }
+
 }

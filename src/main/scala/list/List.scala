@@ -8,4 +8,5 @@ trait List[+T] {
   def addListToBeginning[S >: T](elementsToAdd:List[S]):List[S]
   def map[S](transformFunction:T=>S):List[S]
   def filter(predicate:T=>Boolean):List[T]
+  def fold[S](incrementalFold:(T,S)=>S, initialValue:S):S
 }

@@ -17,4 +17,7 @@ case class NonEmptyList[T](firstElement:T, allOtherElements:List[T]) extends Lis
     if(predicate(firstElement)) new NonEmptyList[T](firstElement,allOtherElements.filter(predicate))
     else allOtherElements.filter(predicate)
   }
+  def fold[S](incrementalFold:(T,S)=>S, initialValue:S):S = {
+    incrementalFold(firstElement, allOtherElements.fold(incrementalFold, initialValue))
+  }
 }
